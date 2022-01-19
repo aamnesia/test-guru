@@ -4,7 +4,7 @@ class Test < ApplicationRecord
 
   has_many :questions
   has_many :user_tests
-  has_many :users, through: :user_tests
+  has_many :users, through: :tests_users
 
   def self.titles_by_category(category_title)
     joins(:categories)
