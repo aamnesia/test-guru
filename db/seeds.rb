@@ -1,3 +1,8 @@
+users = User.create([
+  { username: 'aamnesia', password: 'qwerty' },
+  { username: 'Aamnesia', password: 'qwerty' }
+])
+
 categories = Category.create!([
   { title: 'Biology' },
   { title: 'Math' },
@@ -20,9 +25,4 @@ Answer.create!([
   { body: 'Butterfly', correct: true, question: questions[0] },
   { body: 'Spider', question: questions[0] },
   { body: 'Bumblebee', question: questions[0] },
-])
-
-users = User.create([
-  {login: 'aamnesia', password: 'qwerty'}
-  {login: 'Aamnesia', password: 'qwerty'}
 ])
