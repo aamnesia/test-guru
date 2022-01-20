@@ -1,28 +1,31 @@
 users = User.create([
-  { username: 'aamnesia', password: 'qwerty' },
-  { username: 'Aamnesia', password: 'qwerty' }
+  { email: 'aamnesia@mail.ru', password: 'qwerty' },
+  { email: 'amnesia@mail.ru', password: 'qwerty' }
 ])
 
-categories = Category.create!([
+categories = Category.create([
   { title: 'Biology' },
-  { title: 'Math' },
-  { title: 'Literature' },
+  { title: 'Music' },
+  { title: 'Literature' }
 ])
 
-tests = Test.create!([
-  { title: 'Nabokov', level: 3, category: categories[2], author: users[0] },
-  { title: 'Volume', level: 2, category: categories[1] },
-  { title: 'Butterflies', level: 1, category: categories[0], author: users[1] }
+tests = Test.create([
+  { title: 'Butterflies', level: 1, category: categories[0], author: users[1] },
+  { title: 'Rachmaninoff', level: 2, category: categories[1] },
+  { title: 'Nabokov', level: 3, category: categories[2], author: users[0] }
 ])
 
 questions = Question.create([
-  { body: 'Formula of sphere volume:', test: tests[1] },
-  { body: 'His favorite insect is ...', test: tests[0] },
-  { body: 'How long does a butterfly live?', test: tests[2] },
+  { body: 'How long does a butterfly live?', test: tests[0] },
+  { body: 'Which genre does he represent?', test: tests[1] },
+  { body: 'His favorite insect is ...', test: tests[2] }
 ])
 
-Answer.create!([
-  { body: 'Butterfly', correct: true, question: questions[0] },
-  { body: 'Spider', question: questions[0] },
-  { body: 'Bumblebee', question: questions[0] },
+Answer.create([
+  { body: '15-30 days', question: questions[0], correct: true },
+  { body: 'Romantic', question: questions[1], correct: true },
+  { body: 'Jazz', question: questions[1] },
+  { body: 'Butterfly', question: questions[2], correct: true },
+  { body: 'Spider', question: questions[2] },
+  { body: 'Bumblebee', question: questions[2] }
 ])
