@@ -5,9 +5,9 @@ categories = Category.create!([
 ])
 
 tests = Test.create!([
-  { title: 'Nabokov', level: 3, category: categories[2] },
+  { title: 'Nabokov', level: 3, category: categories[2], author: users[0] },
   { title: 'Volume', level: 2, category: categories[1] },
-  { title: 'Butterflies', level: 1, category: categories[0] }
+  { title: 'Butterflies', level: 1, category: categories[0], author: users[1] }
 ])
 
 questions = Question.create([
