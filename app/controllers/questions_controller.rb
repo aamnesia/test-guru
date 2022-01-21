@@ -9,9 +9,9 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      render plain: 'Question was created'
+      render :success
     else
-      render plain: 'An error occuried'
+      render :new
     end
   end
 
