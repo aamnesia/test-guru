@@ -1,0 +1,13 @@
+<%= form_with model: [@test, @question] do |form| %>
+
+  <p>
+    <%= form.collection_select :test_id, Test.all, :id, :title, prompt: true %>
+  </p>
+
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_field :body, id: :question_body %>
+  </p>
+
+  <p><%= form.submit %></p>
+<% end %>
