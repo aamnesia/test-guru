@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_action :set_test, only: %i[new create]
   before_action :set_question, only: %i[edit update show destroy]
 
-  #rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def edit; end
 
@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      render @question
+      redirect_to @question
     else
       render :new
     end
