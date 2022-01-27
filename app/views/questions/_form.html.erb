@@ -1,5 +1,7 @@
 <%= form_with model: [@test, @question] do |form| %>
 
+  <h1><%= question_header(@question) %></h1>
+
   <p>
     <%= form.label :test %><br>
     <%= form.collection_select :test_id, Test.all, :id, :title, prompt: true %>
@@ -11,4 +13,5 @@
   </p>
 
   <p><%= form.submit %></p>
+  <%= link_to 'Back', test_path(@question.test) %>
 <% end %>

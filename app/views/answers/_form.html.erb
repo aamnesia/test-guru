@@ -1,6 +1,12 @@
 <%= form_with model: [@question, @answer], local: true do |form| %>
   <%= render 'shared/errors', object: @answer %>
 
+  <h1><%= answer_header(@answer) %></h1>
+
+  <p>
+    <%= @answer.question.body %>
+  </p>
+
   <p>
     <%= form.label :body %><br>
     <%= form.text_area :body, id: :answer_body, rows: 7, cols: 60%>
@@ -12,4 +18,5 @@
   </p>
 
   <p><%= form.submit %> </p>
+  <%= link_to 'Back', question_path(@answer.question) %>
 <% end %>
