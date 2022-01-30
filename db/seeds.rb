@@ -1,6 +1,6 @@
 users = User.create([
-  { email: 'aamnesia@mail.ru', password: 'qwerty' },
-  { email: 'amnesia@mail.ru', password: 'qwerty' }
+  { email: 'aamnesia@mail.ru'},
+  { email: 'amnesia@mail.ru'}
 ])
 
 categories = Category.create([
