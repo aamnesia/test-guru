@@ -26,7 +26,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success_percents
-    100 / test.questions.count * correct_questions
+    self.correct_questions * 100 / test.questions.count
   end
 
   def success?
@@ -48,9 +48,9 @@ class TestPassage < ApplicationRecord
 
   def set_current_question
     if new_record? && test.present?
-      self.current_question = test.questions.first
+      self.current_question = test.questions.order(:id).first
     else
-      self.current_question = test.questions[current_question_index + 1]
+      self.current_question = test.questions.order(:id)[current_question_index + 1]
     end
   end
 
