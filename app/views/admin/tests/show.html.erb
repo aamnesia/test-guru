@@ -1,0 +1,22 @@
+<h1><%= @test.category.title %> Test</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @test.title %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @test.level %>
+</p>
+
+<h2>Questions</h2>
+
+<%= link_to 'New question', new_admin_test_question_path(@test) %>
+
+<ol>
+  <li><%= render @test.questions %></li>
+</ol>
+
+<%= link_to 'Edit', edit_admin_test_path(@test) %> |
+<%= link_to 'Back', admin_tests_path %>
