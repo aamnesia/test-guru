@@ -1,0 +1,11 @@
+<tr>
+  <td><%= test.title %></td>
+  <td align="center"><%= test.level %></td>
+  <td><%= test.category.title%></td>
+  <td align="center"><%= test.questions.size%></td>
+  <td><%= link_to 'Show', admin_test_path(test) %></td>
+  <td><%= link_to 'Edit', edit_admin_test_path(test) %></td>
+  <td><%= button_to 'Delete',
+                  admin_test_path(test),
+                  method: :delete%></td>
+</tr>
