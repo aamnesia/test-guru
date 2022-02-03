@@ -1,12 +1,12 @@
-<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <% if @test_passage.success? %>
-  <h2 style="color: green">You passed the test!</h2>
+  <h2 style="color: green"><%= t('.success') %></h2>
 <% else %>
-  <h2 style="color: red">Test was not passed</h2>
+  <h2 style="color: red"><%= t('.failure') %> </h2>
 <% end %>
 
-<h3>Result: <%= @test_passage.success_percents %> %</h3>
+<h3><%= t('.result', result: @test_passage.success_percents) %></h3>
 
 
-<%= link_to 'Back to tests', root_path %>
+<%= link_to t('action.back'), root_path %>
