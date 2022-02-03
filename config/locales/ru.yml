@@ -1,0 +1,72 @@
+ru:
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выберите"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      category: "Категория"
+      questions: "Вопросы"
+      actions: "Действия"
+    test:
+      start: "Начать!"
+
+  admin:
+    tests:
+      create: "Тест был успешно создан!"
+      index:
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        questions: "Вопросы"
+        actions: "Действия"
+        new: "Новый тест"
+      show:
+        new_question: "Новый вопрос"
+      update: "Тест был успешно обновлен!"
+      destroy: "Тест был успешно удален!"
+    nav:
+      logout: "Выйти"
+      welcome: "Приветствуем, %{name} АдминГуру!"
+
+  test_passages:
+    result:
+      header: "Тест %{title} завершен!"
+      success: "Вы прошли тест!"
+      failure: "Тест не пройден"
+      result: "Результат: %{result}%"
+    show:
+      header: "Вы проходите тест '%{title}'"
+
+  action:
+    show: "Показать"
+    edit: "Редактировать"
+    delete: "Удалить"
+    next: "Вперед"
+    back: "Назад"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    nav:
+      logout: "Выйти"
+      welcome: "Добро пожаловать, %{name} Гуру!"
+      login: "Войти"
+      signup: "Зарегистрироваться"
