@@ -1,12 +1,12 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<h1 class="display-4"><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<% if @test_passage.success? %>
-  <h2 style="color: green"><%= t('.success') %></h2>
-<% else %>
-  <h2 style="color: red"><%= t('.failure') %> </h2>
-<% end %>
+  <% if @test_passage.success? %>
+    <h2 style="color: green"><%= t('.success') %></h2>
+  <% else %>
+    <h2 style="color: red"><%= t('.failure') %> </h2>
+  <% end %>
 
-<h3><%= t('.result', result: @test_passage.success_percents) %></h3>
+  <h3><%= t('.result', result: @test_passage.success_percents) %></h3>
 
 
-<%= link_to t('action.back'), root_path %>
+<p><%= link_to t('action.back'), root_path, class: "btn btn-secondary" %></p>

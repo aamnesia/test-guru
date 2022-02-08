@@ -66,8 +66,9 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
-    nav: 
+    nav:
       logout: "LogOut"
       welcome: "Welcome, %{name} Guru!"
       login: "LogIn"
       signup: "SignUp"
+      admin: "AdminPanel"

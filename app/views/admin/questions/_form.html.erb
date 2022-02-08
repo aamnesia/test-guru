@@ -1,7 +1,7 @@
 <%= form_with model: [:admin, @test, @question] do |form| %>
-  <%= render 'shared/errors', object: @question %>
+  <%= render 'shared/errors', resource: @question %>
 
-  <h1><%= question_header(@question) %></h1>
+  <h1 class="display-4"><%= question_header(@question) %></h1>
 
   <p>
     <%= form.label :test %><br>
