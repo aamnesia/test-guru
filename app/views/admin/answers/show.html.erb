@@ -1,18 +1,15 @@
-<h1 class="display-4">Question</h1>
+<h1 class="display-4">Answer on '<%= @answer.question.body %>'</h1>
 
 <p>
-  <%= @answer.question.body %>
+  <%if @answer.correct%>
+    <h2 style="color: green"><%= @answer.body%></h2>
+  <% else %>
+    <h2 style="color: red"><%= @answer.body%></h2>
+  <% end %>
+
+  (<%= @answer.correct%>)
 </p>
 
-<p>
-  <b>Answer:</b>
-  <%= @answer.body%>
-</p>
 
-<p>
-  <b>Correct:</b>
-  <%= @answer.correct%>
-</p>
-
-<%= link_to 'Edit', edit_admin_answer_path(@answer) %> |
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to 'Edit', edit_admin_answer_path(@answer), class: 'btn btn-dark' %>
+<%= link_to 'Back', admin_question_path(@answer.question), class: 'btn btn-dark'  %>
