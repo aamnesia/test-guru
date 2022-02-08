@@ -25,8 +25,7 @@ en:
 
   admin:
     tests:
-      create:
-        success: "Test was successfully created!"
+      create: "Test was successfully created!"
       index:
         header: "Tricky Tests"
         title: "Title"

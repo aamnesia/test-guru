@@ -4,7 +4,7 @@
   <span class="navbar-text">
     <% if user_signed_in? %>
       <%= link_to t('.admin'), admin_tests_path if current_user.admin? %>
-      <%= t('.welcome', name: current_user.first_name || current_user.email) %> |
+      <%= t('.welcome', name: current_user.name) %> |
       <%= link_to t('.logout'), destroy_user_session_path, method: :delete  %>
     <% else %>
       <%= link_to t('.signup'), new_user_registration_path %> |

@@ -26,4 +26,8 @@ class User < ApplicationRecord
   def admin?
     is_a?(Admin)
   end
+
+  def name
+    self.first_name || 'Anonymus'
+  end
 end
