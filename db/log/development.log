@@ -11361,7 +11361,7 @@ Completed 500 Internal Server Error in 52ms (ActiveRecord: 1.6ms | Allocations: 
 
   
 ActionView::Template::Error (undefined method `body' for nil:NilClass):
-    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    1: <h1 class="display-4">Passing The <%= @test_passage.test.title %> Test</h1>
     2: 
     3: <b>
     4:   <%= @test_passage.current_question.body %>
@@ -11388,7 +11388,7 @@ Completed 500 Internal Server Error in 80ms (ActiveRecord: 2.0ms | Allocations: 
 
   
 ActionView::Template::Error (undefined method `body' for nil:NilClass):
-    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    1: <h1 class="display-4">Passing The <%= @test_passage.test.title %> Test</h1>
     2: 
     3: <b>
     4:   <%= @test_passage.current_question.body %>
@@ -12331,7 +12331,7 @@ Completed 500 Internal Server Error in 44ms (ActiveRecord: 2.5ms | Allocations: 
 
   
 ActionView::Template::Error (undefined method `body' for nil:NilClass):
-    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    1: <h1 class="display-4">Passing The <%= @test_passage.test.title %> Test</h1>
     2: 
     3: <b>
     4:   <%= @test_passage.current_question.body %>
@@ -12356,7 +12356,7 @@ Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 2
 
   
 ActionView::Template::Error (undefined method `body' for nil:NilClass):
-    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    1: <h1 class="display-4">Passing The <%= @test_passage.test.title %> Test</h1>
     2: 
     3: <b>
     4:   <%= @test_passage.current_question.body %>
@@ -12383,7 +12383,7 @@ Completed 500 Internal Server Error in 77ms (ActiveRecord: 2.1ms | Allocations: 
 
   
 ActionView::Template::Error (undefined method `body' for nil:NilClass):
-    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    1: <h1 class="display-4">Passing The <%= @test_passage.test.title %> Test</h1>
     2: 
     3: <b>
     4:   <%= @test_passage.current_question.body %>
@@ -16124,7 +16124,7 @@ Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.1ms | Allocations: 
 
   
 ActionView::Template::Error (undefined method `+' for nil:NilClass):
-    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    1: <h1 class="display-4">Passing The <%= @test_passage.test.title %> Test</h1>
     2: <h3><%= @test_passage.current_question_index %> / <%= @test_passage.number_of_questions %></h3>
     3: 
     4: <b>
@@ -50967,7 +50967,7 @@ Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms | Allocations: 
 
   
 ActionView::Template::Error (undefined method `+' for nil:NilClass):
-    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    1: <h1 class="display-4">Passing The <%= @test_passage.test.title %> Test</h1>
     2: <h3><%= @test_passage.current_question_index %> / <%= @test_passage.number_of_questions %></h3>
     3: 
     4: <b>
@@ -52770,7 +52770,7 @@ Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.3ms | Allocations: 
 
   
 ActionView::Template::Error (undefined method `+' for nil:NilClass):
-    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    1: <h1 class="display-4">Passing The <%= @test_passage.test.title %> Test</h1>
     2: <h3><%= @test_passage.current_question_index %> / <%= @test_passage.number_of_questions %></h3>
     3: 
     4: <b>
@@ -52842,7 +52842,7 @@ Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.2ms | Allocations: 
 
   
 ActionView::Template::Error (undefined method `+' for nil:NilClass):
-    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    1: <h1 class="display-4">Passing The <%= @test_passage.test.title %> Test</h1>
     2: <h3><%= @test_passage.current_question_index %> / <%= @test_passage.number_of_questions %></h3>
     3: 
     4: <b>
@@ -53759,7 +53759,7 @@ Did you mean?  current_question_id
                current_question_id_was
                current_question=
                current_question_changed?):
-    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    1: <h1 class="display-4">Passing The <%= @test_passage.test.title %> Test</h1>
     2: <h3><%= @test_passage.current_question_index %> / <%= @test_passage.number_of_questions %></h3>
     3: 
     4: <b>
@@ -53820,7 +53820,7 @@ Did you mean?  current_question_id
                current_question_id_was
                current_question=
                current_question_changed?):
-    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    1: <h1 class="display-4">Passing The <%= @test_passage.test.title %> Test</h1>
     2: <h3><%= @test_passage.current_question_index %> / <%= @test_passage.number_of_questions %></h3>
     3: 
     4: <b>
@@ -53852,7 +53852,7 @@ Did you mean?  current_question_id
                current_question_id_was
                current_question=
                current_question_changed?):
-    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    1: <h1 class="display-4">Passing The <%= @test_passage.test.title %> Test</h1>
     2: <h3><%= @test_passage.current_question_index %> / <%= @test_passage.number_of_questions %></h3>
     3: 
     4: <b>
@@ -56711,7 +56711,7 @@ Did you mean?  answer_url):
     1: <%= form_with model: [@question, @answer], local: true do |form| %>
     2:   <%= render 'shared/errors', object: @answer %>
     3: 
-    4:   <h1><%= answer_header(@answer) %></h1>
+    4:   <h1 class="display-4"><%= answer_header(@answer) %></h1>
     5: 
     6:   <p>
     7:     <%= @answer.question.body %>

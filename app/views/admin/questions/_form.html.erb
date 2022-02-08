@@ -1,18 +1,21 @@
-<%= form_with model: [:admin, @test, @question] do |form| %>
-  <%= render 'shared/errors', object: @question %>
+<div class="card p-3 my-5 border-success">
+  <%= form_with model: [:admin, @test, @question] do |form| %>
+    <%= render 'shared/errors', resource: @question %>
+    <div class="form-group">
+      <h1 class="display-4"><%= question_header(@question) %></h1>
 
-  <h1><%= question_header(@question) %></h1>
+      <p>
+        <%= form.label :test %><br>
+        <%= form.collection_select :test_id, Test.all, :id, :title, prompt: true, class: 'form-control' %>
+      </p>
 
-  <p>
-    <%= form.label :test %><br>
-    <%= form.collection_select :test_id, Test.all, :id, :title, prompt: true %>
-  </p>
+      <p>
+        <%= form.label :body %><br>
+        <%= form.text_field :body, id: :question_body, class: 'form-control' %>
+      </p>
 
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_field :body, id: :question_body %>
-  </p>
-
-  <p><%= form.submit %></p>
-  <%= link_to 'Back', admin_test_path(@question.test) %>
-<% end %>
+      <p><%= form.submit class: 'btn btn-success'%></p>
+      <%= link_to 'Back', admin_test_path(@question.test), class: 'btn btn-dark' %>
+    </div>
+  <% end %>
+</div>
