@@ -18,5 +18,5 @@
   <li><%= render @test.questions %></li>
 </ol>
 
-<%= link_to t('action.edit'), edit_admin_test_path(@test) %> |
-<%= link_to t('action.back'), admin_tests_path %>
+<%= link_to t('action.edit'), edit_admin_test_path(@test), class: 'btn btn-light'%>
+<%= link_to t('action.back'), admin_tests_path, class: 'btn btn-dark' %>

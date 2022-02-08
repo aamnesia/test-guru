@@ -10,17 +10,17 @@
             <div class="form-group">
               <p>
                 <%= f.label :first_name %><br />
-                <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+                <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: 'form-control'  %>
               </p>
 
               <p>
                 <%= f.label :last_name %><br />
-                <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+                <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" , class: 'form-control' %>
               </p>
 
               <p>
                 <%= f.label :email %><br />
-                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'  %>
               </p>
 
               <p>
@@ -28,12 +28,12 @@
                 <% if @minimum_password_length %>
                 <em>(<%= t('.characters_min', length: @minimum_password_length) %>)</em>
                 <% end %><br />
-                <%= f.password_field :password, autocomplete: "new-password" %>
+                <%= f.password_field :password, autocomplete: "new-password", class: 'form-control'  %>
               </p>
 
               <p>
                 <%= f.label :password_confirmation %><br />
-                <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'  %>
               </p>
 
               <%= f.submit t('.sign_up'), class: 'btn btn-primary' %>

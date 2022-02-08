@@ -18,6 +18,6 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
 
-  <p><%= form.submit %></p>
-  <%= link_to 'Back', admin_tests_path %>
+  <p><%= form.submit class: 'btn btn-primary'%></p>
+  <%= link_to 'Back', admin_tests_path, , class: "btn btn-secondary" %>
 <% end %>
