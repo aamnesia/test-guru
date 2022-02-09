@@ -35,7 +35,7 @@ en:
         actions: "Actions"
         new: "New Test"
       show:
-        new_question: "New question"
+        new_question: "New Question"
         edit: "Edit"
         back: "Back"
       update: "Test was successfully updated!"
@@ -52,6 +52,9 @@ en:
       result: "Result: %{result}%"
     show:
       header: "Passing the %{title} Test"
+    gist:
+      success: "Gist was successfully created! %{url}"
+      failure: "An error occured while saving gist"
 
   action:
     show: "Show"
@@ -71,3 +74,5 @@ en:
       login: "LogIn"
       signup: "SignUp"
       admin: "AdminPanel"
+
+  description: "A question about %{title} from TestGuru"

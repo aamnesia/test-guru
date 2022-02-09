@@ -20,8 +20,8 @@
         <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: 'form-control' %>
       </p>
 
-      <p><%= form.submit class: 'btn btn-success'%></p>
-      <%= link_to 'Back', admin_tests_path, class: 'btn btn-dark' %>
+      <p><%= form.submit class: 'btn btn-success'%>
+      <%= link_to 'Back', admin_tests_path, class: 'btn btn-dark' %></p>
     </div>
   <% end %>
 </div>

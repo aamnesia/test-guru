@@ -50,6 +50,9 @@ ru:
       result: "Результат: %{result}%"
     show:
       header: "Вы проходите тест '%{title}'"
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
 
   action:
     show: "Показать"
