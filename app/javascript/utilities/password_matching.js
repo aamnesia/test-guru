@@ -15,7 +15,7 @@ function matchPasswConf() {
       document.querySelector('.octicon-check').classList.add('hide')
     }
   } else {
-  document.querySelector('.octicon-x').classList.add('hide')
-  document.querySelector('.octicon-check').classList.add('hide')
+  document.querySelectorAll('.octicon-x').classList.add('hide')
+  document.querySelectorAll('.octicon-check').classList.add('hide')
   }
 }

@@ -40,6 +40,8 @@ gem "octokit", "~> 4.0"
 # LOCALIZATION
 gem 'rails-i18n'
 
+gem 'net-http'
+
 #ui
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
