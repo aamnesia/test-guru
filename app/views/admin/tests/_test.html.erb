@@ -3,10 +3,10 @@
   <td><%= test.level %></td>
   <td class="text-left"><%= test.category.title%></td>
   <td><%= test.questions.size%></td>
-  <td><%= link_to t('action.show'), admin_test_path(test), class: 'btn btn-light'%></td>
-  <td><%= link_to t('action.edit'), edit_admin_test_path(test), class: 'btn btn-light'%></td>
+  <td><%= link_to t('action.show'), admin_test_path(test), class: 'btn btn-dark'%></td>
+  <td><%= link_to t('action.edit'), edit_admin_test_path(test), class: 'btn btn-dark'%></td>
   <td><%= button_to t('action.delete'),
                   admin_test_path(test),
                   method: :delete,
-                  class: 'btn btn-light'%></td>
+                  class: 'btn btn-dark'%></td>
 </tr>

@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.1"
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.1"
 
@@ -29,6 +31,11 @@ gem "jbuilder"
 
 # auth
 gem 'devise', '~> 4.0'
+
+#networking
+gem 'faraday'
+
+gem "octokit", "~> 4.0"
 
 # LOCALIZATION
 gem 'rails-i18n'
