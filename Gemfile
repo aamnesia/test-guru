@@ -40,9 +40,12 @@ gem "octokit", "~> 4.0"
 # LOCALIZATION
 gem 'rails-i18n'
 
+gem 'net-http'
+
 #ui
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
+gem 'octicons_helper'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

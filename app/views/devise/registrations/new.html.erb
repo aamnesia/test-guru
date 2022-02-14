@@ -1,7 +1,7 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-4">
 
-    <h2><%= t('.header') %></h2>
+    <h2 align="center"><%= t('.header') %></h2>
 
     <div class="card border-primary">
       <div class="card-body">
@@ -32,8 +32,10 @@
               </p>
 
               <p>
-                <%= f.label :password_confirmation %><br />
-                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'  %>
+                <%= f.label :password_confirmation %>
+                <%= octicon 'check', class: 'text-success hide'%>
+                <%= octicon 'x', class: 'text-danger hide' %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
               </p>
 
               <%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
