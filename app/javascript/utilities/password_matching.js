@@ -7,8 +7,8 @@ document.addEventListener('turbolinks:load', function() {
 
 function matchPasswConf() {
   if (password_confirmation.value === '') {
-    document.querySelectorAll('.octicon-x').classList.add('hide')
-    document.querySelectorAll('.octicon-check').classList.add('hide')
+    document.querySelector('.octicon-x').classList.add('hide')
+    document.querySelector('.octicon-check').classList.add('hide')
   } else if (password.value === password_confirmation.value) {
     document.querySelector('.octicon-check').classList.remove('hide')
     document.querySelector('.octicon-x').classList.add('hide')
