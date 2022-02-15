@@ -1,5 +1,7 @@
 <h1 class="display-4"><%= t('.header') %></h1>
 
+<%= render 'shared/errors', resource: @test  %>
+
 <p>
   <%= link_to t('.new'), new_admin_test_path, class: 'btn btn-success' %>
 </p>

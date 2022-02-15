@@ -40,6 +40,8 @@ en:
         back: "Back"
       update: "Test was successfully updated!"
       destroy: "Test was successfully deleted!"
+      form_inline:
+        submit: 'Ok'
     nav:
       logout: "LogOut"
       welcome: "Welcome, %{name} AdminGuru!"

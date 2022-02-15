@@ -38,6 +38,8 @@ ru:
         new_question: "Новый вопрос"
       update: "Тест был успешно обновлен!"
       destroy: "Тест был успешно удален!"
+      form_inline:
+        submit: 'Ok'
     nav:
       logout: "Выйти"
       welcome: "Приветствуем, %{name} АдминГуру!"

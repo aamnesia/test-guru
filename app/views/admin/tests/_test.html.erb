@@ -1,10 +1,17 @@
 <tr class="text-center">
-  <td class="text-left"><%= test.title %></td>
+  <td class="text-left">
+    <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
+    <%= render 'form_inline', test: test == @test ? @test : test %>
+  </td>
   <td><%= test.level %></td>
   <td class="text-left"><%= test.category.title%></td>
   <td><%= test.questions.size%></td>
   <td><%= link_to t('action.show'), admin_test_path(test), class: 'btn btn-dark'%></td>
-  <td><%= link_to t('action.edit'), edit_admin_test_path(test), class: 'btn btn-dark'%></td>
+  <td>
+    <%= link_to t('action.edit'), edit_admin_test_path(test),
+                data: { test_id: test.id },
+                class: "btn btn-dark form-inline-link" %>
+  </td>
   <td><%= button_to t('action.delete'),
                   admin_test_path(test),
                   method: :delete,
