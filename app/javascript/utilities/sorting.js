@@ -1,4 +1,5 @@
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("4")
   var control = document.querySelector('.sort-by-title');
 
   if (control) { control.addEventListener('click', sortRowsByTitle) }

@@ -1,4 +1,5 @@
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("2")
   var password = document.getElementById('user_password');
   var password_confirmation = document.getElementById('user_password_confirmation');
 
@@ -6,6 +7,9 @@ document.addEventListener('turbolinks:load', function() {
 });
 
 function matchPasswConf() {
+  var password = document.getElementById('user_password');
+  var password_confirmation = document.getElementById('user_password_confirmation');
+
   if (password_confirmation.value === '') {
     document.querySelector('.octicon-x').classList.add('hide')
     document.querySelector('.octicon-check').classList.add('hide')

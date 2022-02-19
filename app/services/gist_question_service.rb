@@ -3,7 +3,8 @@ class GistQuestionService
   def initialize(question, client: default_client)
     @question = question
     @test = @question.test
-    @client =
+    @client = client
+  end
 
   def call
     @client.create_gist(gist_params)

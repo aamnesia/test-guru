@@ -1,4 +1,5 @@
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("3")
   var progressBar = document.getElementById('progress');
 
   if (progressBar) {
@@ -8,6 +9,6 @@ document.addEventListener('turbolinks:load', function() {
 
     var progressPercent = questionNumber/questionsCount * 100;
 
-    progressBar.style.width = progressPercent + '%'
+    progressBar.style.width = progressPercent
   }
 })

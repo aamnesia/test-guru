@@ -39,7 +39,7 @@ ru:
       update: "Тест был успешно обновлен!"
       destroy: "Тест был успешно удален!"
       form_inline:
-        submit: 'Ok'
+        submit: 'OK'
     nav:
       logout: "Выйти"
       welcome: "Приветствуем, %{name} АдминГуру!"
