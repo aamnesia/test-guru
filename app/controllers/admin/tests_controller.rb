@@ -1,6 +1,7 @@
 class Admin::TestsController < Admin::BaseController
 
-  before_action :set_test, only: %i[edit update show destroy start]
+  before_action :set_tests, only: %i[index update_inline]
+  before_action :set_test, only: %i[edit update show destroy start update_inline]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -10,9 +11,7 @@ class Admin::TestsController < Admin::BaseController
     @test = Test.new
   end
 
-  def index
-    @tests = Test.all
-  end
+  def index; end
 
   def show
     @questions = @test.questions
@@ -35,6 +34,14 @@ class Admin::TestsController < Admin::BaseController
     end
   end
 
+  def update_inline
+   if @test.update(test_params)
+     redirect_to admin_tests_path
+   else
+     render :index
+   end
+ end
+
   def destroy
     @test.destroy
     redirect_to admin_tests_path, notice: t('.destroy')
@@ -52,6 +59,10 @@ class Admin::TestsController < Admin::BaseController
 
   def set_test
     @test = Test.find(params[:id])
+  end
+
+  def set_tests
+    @tests = Test.all
   end
 
 end
