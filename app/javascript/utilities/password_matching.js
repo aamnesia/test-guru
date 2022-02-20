@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log("2")
   var password = document.getElementById('user_password');
   var password_confirmation = document.getElementById('user_password_confirmation');
 

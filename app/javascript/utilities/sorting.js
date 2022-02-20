@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log("4")
   var control = document.querySelector('.sort-by-title');
 
   if (control) { control.addEventListener('click', sortRowsByTitle) }
@@ -27,8 +26,7 @@ function sortRowsByTitle() {
 
   var sortedTable = document.createElement('table')
 
-  sortedTable.classList.add('table')
-
+  sortedTable.classList.add('table', 'table-striped', 'table-bordered')
   sortedTable.appendChild(rows[0])
 
   for (var i = 0; i < sortedRows.length; i++) {

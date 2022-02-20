@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log("3")
   var progressBar = document.getElementById('progress');
 
   if (progressBar) {
@@ -9,6 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var progressPercent = questionNumber/questionsCount * 100;
 
-    progressBar.style.width = progressPercent
+    progressBar.style.width = progressPercent + '%'
   }
 })
