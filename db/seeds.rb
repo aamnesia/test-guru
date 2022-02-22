@@ -1,7 +1,4 @@
-users = User.create([
-  { email: 'aamnesia@mail.ru'},
-  { email: 'amnesia@mail.ru'}
-])
+admin = Admin.create!(email: 'admin@ex.com', first_name: 'admin', last_name: 'admin', password: '123456')
 
 categories = Category.create([
   { title: 'Biology' },
@@ -10,9 +7,9 @@ categories = Category.create([
 ])
 
 tests = Test.create([
-  { title: 'Butterflies', level: 1, category: categories[0], author: users[1] },
+  { title: 'Butterflies', level: 1, category: categories[0], author: admin },
   { title: 'Rachmaninoff', level: 2, category: categories[1] },
-  { title: 'Nabokov', level: 3, category: categories[2], author: users[0] }
+  { title: 'Nabokov', level: 3, category: categories[2], author: admin }
 ])
 
 questions = Question.create([
