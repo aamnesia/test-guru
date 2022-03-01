@@ -1,34 +1,44 @@
 <div class="row justify-content-center mt-3">
-  
+
   <h1 class="display-4"><%= t('.header', title: @test_passage.test.title) %></h1>
   <%= render 'shared/progress_bar', test: @test %>
 
   <div class="card p-3 my-5 border-success">
     <div class="card-body">
-      <div class="badge badge-pill badge-dark">
-        <%= "#{@test_passage.current_question_index + 1}" %>/
-        <%= @test_passage.number_of_questions %>
-      </div>
 
-      <h2>
-        <%= @test_passage.current_question.body %>
-      </h2>
-
-      <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form|%>
-        <div class="form-group">
-          <div class="form-check">
-            <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
-            <%= b.check_box id: "answer_ids_#{b.object.id}", class: "form-check-input"%>
-            <%= b.label class: "form-check-label" %>
-            <br>
-            <% end %>
-          </div>
-
-          <br>
-          <%= form.submit t('action.next'), class: "btn btn-success" %>
+      <% if @test_passage.current_question.nil? %>
+        <h2>There are no questions</h2><br>
+        <%= link_to 'Back', root_path, class: "btn btn-dark" %>
+      <% else %>
+        <div class="badge badge-pill badge-dark">
+          <%= "#{@test_passage.current_question_index + 1}" %>/
+          <%= @test_passage.number_of_questions %>
         </div>
+
+        <h2>
+          <%= @test_passage.current_question.body %>
+        </h2>
       <% end %>
-    </div>
-    <%= button_to 'Gist Question', gist_test_passage_path(@test_passage), class: "btn btn-dark" %>
+
+      <% if @test_passage.current_question.answers.count.zero? %>
+        There are no answers
+      <% else %>
+        <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form|%>
+          <div class="form-group">
+            <div class="form-check">
+              <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+              <%= b.check_box id: "answer_ids_#{b.object.id}", class: "form-check-input"%>
+              <%= b.label class: "form-check-label" %>
+              <br>
+              <% end %>
+            </div>
+            <br>
+            <%= form.submit t('action.next'), class: "btn btn-success" %>
+          </div>
+        <% end %>
+        </div>
+        <%= button_to 'Gist Question', gist_test_passage_path(@test_passage), class: "btn btn-dark" %>
+      <% end %>
+    </div>      
   </div>
 </div>
