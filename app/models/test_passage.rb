@@ -25,7 +25,6 @@ class TestPassage < ApplicationRecord
     test.questions.count
   end
 
-
   def success_percents
     self.correct_questions * 100 / test.questions.count
   end
@@ -37,11 +36,16 @@ class TestPassage < ApplicationRecord
   private
 
   def correct_answer?(answer_ids)
-    return true unless correct_answers
-    correct_answers_count = correct_answers.count
+    if answer_ids && correct_answers
+      correct_answers_count = correct_answers.count
 
-    (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
-    correct_answers_count == answer_ids.count
+      (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
+      correct_answers_count == answer_ids.count
+    elsif !(answer_ids && correct_answers)
+      true
+    else
+      false
+    end
   end
 
   def correct_answers
