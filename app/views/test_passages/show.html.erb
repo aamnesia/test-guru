@@ -3,11 +3,13 @@
   <h1 class="display-4"><%= t('.header', title: @test_passage.test.title) %></h1>
 
   <% if @test_passage.current_question.nil? %>
-    <div>
-      <h2>There are no available questions</h2>
+    <div class="card p-3 my-5 border-success">
+      <div class="card-body">
+        <h2>There are no available questions</h2><br>
+
+        <p><%= link_to 'Back', root_path, class: "btn btn-dark" %></p>
+      </div>
     </div>
-    
-    <br><%= link_to 'Back', root_path, class: "btn btn-dark" %>
   <% else %>
     <%= render 'shared/progress_bar', test: @test %>
 
