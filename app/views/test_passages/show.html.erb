@@ -1,16 +1,17 @@
 <div class="row justify-content-center mt-3">
 
   <h1 class="display-4"><%= t('.header', title: @test_passage.test.title) %></h1>
-  <%= render 'shared/progress_bar', test: @test %>
 
-  <div class="card p-3 my-5 border-success">
-    <div class="card-body">
+  <% if @test_passage.current_question.nil? %>
+    <h2>There are no questions</h2><br>
 
-      <% if @test_passage.current_question.nil? %>
-        <h2>There are no questions</h2><br>
+    <%= link_to 'Back', root_path, class: "btn btn-dark" %>
+  <% else %>
+    <%= render 'shared/progress_bar', test: @test %>
 
-        <%= link_to 'Back', root_path, class: "btn btn-dark" %>
-      <% else %>
+    <div class="card p-3 my-5 border-success">
+      <div class="card-body">
+
         <div class="badge badge-pill badge-dark">
           <%= "#{@test_passage.current_question_index + 1}" %>/
           <%= @test_passage.number_of_questions %>
@@ -22,6 +23,8 @@
 
         <% if @test_passage.current_question.answers.count.zero? %>
           There are no answers
+
+          <%= link_to 'Back', root_path, class: "btn btn-dark" %>
         <% else %>
           <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form|%>
             <div class="form-group">
@@ -39,7 +42,6 @@
 
           <%= button_to 'Gist Question', gist_test_passage_path(@test_passage), class: "btn btn-dark" %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
 </div>
