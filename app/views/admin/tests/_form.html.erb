@@ -22,7 +22,13 @@
 
       <p>
         <%= form.label :ready %>:
-        <%= form.check_box :ready, id: :test_ready %>
+
+        <% if @test.valid_readiness? %>
+          <%= form.check_box :ready, id: :test_ready%>
+        <% else %>
+          <input type="checkbox" disabled><br>
+          <small>To be signed as ready test must include questions, each with correct answer</small>
+        <% end %>
       </p>
 
       <p><%= form.submit class: 'btn btn-success'%>

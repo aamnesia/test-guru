@@ -25,12 +25,8 @@ class Test < ApplicationRecord
     by_category(category_title).order(title: :DESC).pluck(:title)
   end
 
-  def valid_readiness?(ready)
-    if ready
-      has_questions? && each_question_has_correct_answer?
-    else
-      true
-    end
+  def valid_readiness?
+    has_questions? && each_question_has_correct_answer?
   end
 
   def has_questions?

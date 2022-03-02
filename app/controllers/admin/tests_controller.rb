@@ -27,10 +27,10 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def update
-    if @test.valid_readiness?(params[:ready]) && @test.update(test_params)
+    if @test.update(test_params)
       redirect_to admin_test_path(@test), notice: t('.update')
     else
-      render :edit, notice: 'Ready test has questions and correct answers'
+      render :edit
     end
   end
 
