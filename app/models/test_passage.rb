@@ -36,16 +36,11 @@ class TestPassage < ApplicationRecord
   private
 
   def correct_answer?(answer_ids)
-    if answer_ids && correct_answers
-      correct_answers_count = correct_answers.count
+    return false if !answer_ids.present?
+    correct_answers_count = correct_answers.count
 
-      (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
-      correct_answers_count == answer_ids.count
-    elsif !(answer_ids && correct_answers)
-      true
-    else
-      false
-    end
+    (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
+    correct_answers_count == answer_ids.count
   end
 
   def correct_answers

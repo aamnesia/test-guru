@@ -20,6 +20,11 @@
         <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: 'form-control' %>
       </p>
 
+      <p>
+        <%= form.label :ready %>:
+        <%= form.check_box :ready, id: :test_ready %>
+      </p>
+
       <p><%= form.submit class: 'btn btn-success'%>
       <%= link_to 'Back', admin_tests_path, class: 'btn btn-dark' %></p>
     </div>

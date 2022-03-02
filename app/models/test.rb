@@ -16,6 +16,7 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :middle, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
+  scope :ready, -> { where(ready: true) }
 
   scope :by_category, -> (category_title) {
     joins(:category).where(categories: { title: category_title }) }
@@ -23,4 +24,24 @@ class Test < ApplicationRecord
   def self.titles_by_category(category_title)
     by_category(category_title).order(title: :DESC).pluck(:title)
   end
+
+  def valid_readiness?(ready)
+    if ready
+      has_questions? && each_question_has_correct_answer?
+    else
+      true
+    end
+  end
+
+  def has_questions?
+    self.questions.present?
+  end
+
+  def each_question_has_correct_answer?
+    self.questions.each do |question|
+      return false if !question.answers.correct.present?
+    end
+    true
+  end
+
 end

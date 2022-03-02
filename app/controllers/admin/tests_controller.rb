@@ -27,10 +27,10 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def update
-    if @test.update(test_params)
+    if @test.valid_readiness?(params[:ready]) && @test.update(test_params)
       redirect_to admin_test_path(@test), notice: t('.update')
     else
-      render :edit
+      render :edit, notice: 'Ready test has questions and correct answers'
     end
   end
 
@@ -50,7 +50,7 @@ class Admin::TestsController < Admin::BaseController
   private
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :ready)
   end
 
   def rescue_with_test_not_found

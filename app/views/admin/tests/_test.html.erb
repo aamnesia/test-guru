@@ -6,6 +6,7 @@
   <td align="center"><%= test.level %></td>
   <td><%= test.category.title%></td>
   <td align="center"><%= test.questions.size%></td>
+  <td align="center"><%= test.ready %></td>
   <td align="center"><%= link_to t('action.show'), admin_test_path(test), class: 'btn btn-dark'%></td>
   <td align="center">
     <%= link_to t('action.edit'), edit_admin_test_path(test),
