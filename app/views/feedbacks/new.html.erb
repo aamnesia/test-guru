@@ -1,0 +1,29 @@
+<div class="card p-3 my-5 border-primary">
+  <%= form_with model: @feedback do |form| %>
+    <%= render 'shared/errors', resource: @question %>
+    <div class="form-group">
+      <h1 class="display-4">FeedBack</h1>
+
+      <p>
+        <%= form.label :name %>
+        <%= form.text_field :name, id: :feedback_name, class: 'form-control',
+                            value: current_user.name, readonly: true %>
+      </p>
+
+      <p>
+        <%= form.label :email %>
+        <%= form.text_field :email, id: :feedback_email, class: 'form-control',
+                            value: current_user.email, readonly: true %>
+      </p>
+
+      <p>
+        <%= form.label :body, t('.body') %>
+        <%= form.text_area :body, cols: 60, rows: 10, id: :feedback_body,
+                           class: 'form-control' %>
+      </p>
+
+      <p><%= form.submit class: 'btn btn-primary'%>
+      <%= link_to 'Back', root_path, class: 'btn btn-dark' %></p>
+    </div>
+  <% end %>
+</div>

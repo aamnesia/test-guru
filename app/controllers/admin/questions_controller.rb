@@ -32,6 +32,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def destroy
     @question.destroy
+    @question.test.change_not_valid
     redirect_to admin_test_path(@question.test), notice: "Question was successfully deleted!"
   end
 
@@ -52,4 +53,5 @@ class Admin::QuestionsController < Admin::BaseController
   def set_question
     @question = Question.find(params[:id])
   end
+
 end

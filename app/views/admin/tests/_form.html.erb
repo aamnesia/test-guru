@@ -16,8 +16,19 @@
       </p>
 
       <p>
-        <%= form.label :category_id %>
+        <%= form.label :category_id %>:
         <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= form.label :ready %>:
+
+        <% if @test.valid_readiness? %>
+          <%= form.check_box :ready, id: :test_ready%>
+        <% else %>
+          <input type="checkbox" disabled><br>
+          <small>To be signed as ready test must include questions, each with correct answer</small>
+        <% end %>
       </p>
 
       <p><%= form.submit class: 'btn btn-success'%>
