@@ -29,6 +29,11 @@ class Test < ApplicationRecord
     has_questions? && each_question_has_correct_answer?
   end
 
+  def change_not_valid
+    debugger
+    self.update(ready: false) if !valid_readiness?
+  end
+
   def has_questions?
     self.questions.present?
   end

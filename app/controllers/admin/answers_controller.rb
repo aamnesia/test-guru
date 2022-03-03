@@ -27,11 +27,12 @@ class Admin::AnswersController < Admin::BaseController
     else
       render :edit
     end
+    @answer.question.test.change_not_valid
   end
 
   def destroy
     @answer.destroy
-
+    @answer.question.test.change_not_valid
     redirect_to admin_question_path(@answer.question), notice: "Answer was successfully deleted!"
   end
 
@@ -48,4 +49,5 @@ class Admin::AnswersController < Admin::BaseController
     def answer_params
       params.require(:answer).permit(:body, :correct)
     end
+
 end

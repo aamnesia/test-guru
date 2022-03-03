@@ -16,7 +16,7 @@
       </p>
 
       <p>
-        <%= form.label :category_id %>
+        <%= form.label :category_id %>:
         <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: 'form-control' %>
       </p>
 
