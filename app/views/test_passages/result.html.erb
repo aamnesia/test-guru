@@ -1,5 +1,11 @@
 <h1 class="display-4"><%= t('.header', title: @test_passage.test.title) %></h1>
 
+  <% if @test_passage.time_out? %>
+    <% flash.now[:alert] = "Time is out" %>
+  <% else %>
+    <% flash.now[:notice] = "Test was finished in time" %>
+  <% end %>
+
   <% if @test_passage.success? %>
     <h2 style="color: green"><%= t('.success') %></h2>
   <% else %>

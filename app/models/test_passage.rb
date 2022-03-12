@@ -14,6 +14,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    current_question = nil if time_out?
     save!
   end
 
@@ -31,6 +32,14 @@ class TestPassage < ApplicationRecord
 
   def success?
     success_percents.to_i >= SUCCESS_RATIO
+  end
+
+  def time_out?
+    if test.timer > 0
+      (Time.current - created_at).to_i >= test.timer
+    else
+      false
+    end
   end
 
   private

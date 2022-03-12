@@ -10,6 +10,16 @@
   <%= @test.level %>
 </p>
 
+<p>
+  <strong>Timer:</strong>
+  <%= fixed_or_unlimited(@test)  %>
+</p>
+
+<p>
+  <strong>Ready:</strong>
+  <%= @test.ready %>
+</p>
+
 <p><%= link_to t('.new_question'), new_admin_test_question_path(@test), class: 'btn btn-success' %></p>
 <table class="table table-striped  table-bordered">
   <thead>
