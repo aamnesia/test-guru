@@ -21,6 +21,11 @@
       </p>
 
       <p>
+        <%= form.label :timer %>:
+        <%= form.select :timer, (0..30).step(5) %>
+      </p>
+
+      <p>
         <%= form.label :ready %>:
 
         <% if @test.valid_readiness? %>

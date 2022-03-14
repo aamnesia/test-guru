@@ -33,6 +33,14 @@ class TestPassage < ApplicationRecord
     success_percents.to_i >= SUCCESS_RATIO
   end
 
+  def time_out?
+    if test.timer > 0
+      (Time.current - created_at).to_i >= test.timer
+    else
+      false
+    end
+  end
+
   private
 
   def correct_answer?(answer_ids)
@@ -51,6 +59,7 @@ class TestPassage < ApplicationRecord
     if new_record? && test.present?
       self.current_question = test.questions.order(:id).first
     else
+      current_question = nil if time_out?
       self.current_question = test.questions.order(:id)[current_question_index + 1]
     end
   end

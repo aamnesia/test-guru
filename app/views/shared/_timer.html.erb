@@ -1,0 +1,8 @@
+<p>
+<div class="badge badge-pill badge-dark my-2">
+  <%= content_tag :div, "",
+                  id: 'timer',
+                  data: { initial_time: @test_passage.created_at.to_i,
+                          passage_time: @test_passage.test.timer } %>
+</div>
+</p>
