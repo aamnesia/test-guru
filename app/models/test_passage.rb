@@ -14,7 +14,6 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
-    current_question = nil if time_out?
     save!
   end
 
@@ -60,6 +59,7 @@ class TestPassage < ApplicationRecord
     if new_record? && test.present?
       self.current_question = test.questions.order(:id).first
     else
+      current_question = nil if time_out?
       self.current_question = test.questions.order(:id)[current_question_index + 1]
     end
   end
