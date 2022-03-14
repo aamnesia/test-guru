@@ -1,0 +1,24 @@
+<h1 class="display-4">Badge</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @badge.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag("#{badge.image_url}", size: "128x128") %>
+</p>
+
+<p>
+  <strong>Rule:</strong>
+  <%= @badge.rule %>
+</p>
+
+<p>
+  <strong>Parameter:</strong>
+  <%= @badge.parameter %>
+</p>
+
+<td><%= link_to 'Edit', edit_admin_badge_path(@badge), class: 'btn btn-dark'%></td>
+<%= link_to t('action.back'), admin_badges_path, class: 'btn btn-dark' %>

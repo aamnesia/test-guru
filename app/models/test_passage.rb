@@ -6,7 +6,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :set_current_question, on: [:create, :update]
-
+  before_update :fix_result!
 
   def completed?
     current_question.nil?
@@ -53,6 +53,12 @@ class TestPassage < ApplicationRecord
     else
       self.current_question = test.questions.order(:id)[current_question_index + 1]
     end
+  end
+
+  private
+
+  def fix_result!
+    self.success = self.success? if self.completed?
   end
 
 end

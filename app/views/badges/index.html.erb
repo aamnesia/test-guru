@@ -1,0 +1,17 @@
+<h1 class="display-4"><%= Badges %></h1>
+
+<% if @own_badges %>
+  <h3 class="display-4"> Achieved badges </h3>
+  <table class="table table-striped table-bordered ">
+    <%= render "table" %>
+    <%= render @own_badges %>
+  </table>
+<% else %>
+  <h4>You don't have any badges yet.. But there are many ones to achieve!</h4>
+<% end %>
+
+<h3 class="display-4"> All badges </h3>
+<table class="table table-striped table-bordered ">
+  <%= render "table" %>
+  <%= render @badges %>
+</table>

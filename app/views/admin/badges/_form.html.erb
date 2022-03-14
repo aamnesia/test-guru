@@ -1,0 +1,35 @@
+<div class="card p-3 my-5 border-success">
+  <%= form_with model: [:admin, @badge] do |form| %>
+
+    <%= render 'shared/errors', resource: @badge%>
+
+    <div class="form-group">
+      <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title, class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= form.label :image_url %><br>
+        <%= form.text_field :image_url %>
+      </p>
+
+      <p>
+        <%= form.label :rule %><br>
+        <%= form.select :rule, BadgeGranterService::RULES.map { |type| [ t(type), type ] }, prompt: true %>
+      </p>
+
+      <p>
+      	<%= form.label :parameter %><br>
+      	<%= form.text_field :parameter %>
+      </p>
+
+      <p>
+        <%= image_tag("#{@badge.image_url}", size: "128x128") if @badge.image_url.present? %>
+      </p>
+
+      <p><%= form.submit class: 'btn btn-success'%>
+      <%= link_to 'Back', admin_badges_path, class: 'btn btn-dark' %></p>
+    </div>
+  <% end %>
+</div>
