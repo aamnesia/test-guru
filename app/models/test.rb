@@ -30,7 +30,6 @@ class Test < ApplicationRecord
   end
 
   def change_not_valid
-    debugger
     self.update(ready: false) if !valid_readiness?
   end
 

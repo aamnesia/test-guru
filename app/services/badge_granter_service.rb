@@ -1,8 +1,8 @@
 class BadgeGranterService
 
-  RULES = %i[all_by_category first_try all_by_level].freeze
+  RULES = %i[all_by_category at_first_try all_by_level].freeze
 
-  ddef initialize(test_passage)
+  def initialize(test_passage)
     @test_passage = test_passage
     @user = @test_passage.user
   end
@@ -16,7 +16,7 @@ class BadgeGranterService
   private
 
   def all_by_category(category_title)
-    return if @test_passage.test.category.title != category_title
+    return unless @test_passage.test.category.title == category_title
     return unless @test_passage.success?
     (
       Test.by_category(category_title).pluck(:id) -
@@ -24,13 +24,13 @@ class BadgeGranterService
     ).empty?
   end
 
-  def at_first_try
+  def at_first_try(_blank)
     return unless @test_passage.success?
     @user.tests.where(id: @test_passage.test.id, test_passages: { success: true}).count == 1
   end
 
   def all_by_level(level)
-    return if @test_passage.test.level != level.to_i
+    return unless @test_passage.test.level == level.to_i
     return unless @test_passage.success?
 
     (
@@ -42,7 +42,7 @@ class BadgeGranterService
   private
 
   def last_badge_date_by_rules(rule, parameter)
-    @user.badges_users.by_rules(rule, parameter).order(:created_at).last.try(:created_at)
+    @user.user_badges.by_rules(rule, parameter).order(:created_at).last.try(:created_at)
   end
 
   def new_passages(last_date)

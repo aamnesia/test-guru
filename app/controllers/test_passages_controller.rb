@@ -1,5 +1,5 @@
 class TestPassagesController < ApplicationController
-  
+
   before_action :set_test_passage, only: %i[show update result gist]
 
   def show; end
@@ -43,6 +43,7 @@ class TestPassagesController < ApplicationController
   def reward_user
     @rewarded_badges = BadgeGranterService.new(@test_passage).call
     current_user.badges << @rewarded_badges
+    flash[:notice] = "You gained new badge!" if @rewarded_badges
   end
 
 end
