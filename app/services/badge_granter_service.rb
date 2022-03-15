@@ -5,6 +5,7 @@ class BadgeGranterService
   def initialize(test_passage)
     @test_passage = test_passage
     @user = @test_passage.user
+    @test = test_passage.test
   end
 
   def call
@@ -17,36 +18,26 @@ class BadgeGranterService
 
   def all_by_category(category_title)
     return unless @test_passage.test.category.title == category_title
-    return unless @test_passage.success?
-    (
-      Test.by_category(category_title).pluck(:id) -
-      new_passages(last_badge_date_by_rules(__method__, category_title)).ids
-    ).empty?
+
+    tests = Test.by_category(category_title).pluck(:id)
+    completed = @user.test_passages.passed
+                  .where(test: tests)
+                  .pluck(:test_id).uniq
+    tests.count == completed.count
   end
 
   def at_first_try(_blank)
-    return unless @test_passage.success?
-    @user.tests.where(id: @test_passage.test.id, test_passages: { success: true}).count == 1
+    TestPassage.where(test: @test, user: @user).count == 1
   end
 
   def all_by_level(level)
     return unless @test_passage.test.level == level.to_i
-    return unless @test_passage.success?
 
-    (
-      Test.level(level).pluck(:id) -
-      new_passages(last_badge_date_by_rules(__method__, level)).ids
-    ).empty?
+    tests = Test.level(level).pluck(:id)
+    completed = @user.test_passages.passed
+                  .where(test: tests)
+                  .pluck(:test_id).uniq
+    tests.count == completed.count
   end
 
-  private
-
-  def last_badge_date_by_rules(rule, parameter)
-    @user.user_badges.by_rules(rule, parameter).order(:created_at).last.try(:created_at)
-  end
-
-  def new_passages(last_date)
-    return @user.success_tests if last_date.nil?
-    @user.success_tests.where('test_passages.created_at > ?', last_date)
-  end
 end
